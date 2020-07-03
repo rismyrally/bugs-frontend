@@ -111,7 +111,7 @@ export const assignBugToUser = (bugId, userId) =>
 // f(x) => y  { input: 1, output: 2 }
 // if list of bugs not changed => get unresolved bugs from the cache
 export const getUnresolvedBugs = createSelector(
-  (state) => state.entities.bugs,
+  (state) => state.entities.bugs.list,
   (state) => state.entities.projects,
   (bugs, projects) => bugs.filter((bug) => !bug.resolved)
 );
